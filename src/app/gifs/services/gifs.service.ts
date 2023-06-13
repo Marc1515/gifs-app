@@ -17,6 +17,8 @@ export class GifsService {
 
   private organizedHistory(tag: string) {
 
+    if (tag.length === 0) return;
+
     tag = tag.toLowerCase();
 
     if (this._tagsHistory.includes(tag)) {
@@ -31,7 +33,7 @@ export class GifsService {
   searchTag(tag: string): void {
 
     /* Si el string que llega está vacio, que la función no haga nada */
-    if (tag.length === 0) return;
+
     this.organizedHistory(tag);
 
     console.log(this.tagsHistory)
