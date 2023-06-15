@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+
+
+const GIPHY_API_KEY = 'Er2HU62YEsEMKoepR3GAxvsaKq3Emmlz';
 
 @Injectable({providedIn: 'root'})
 export class GifsService {
 
 
   private _tagsHistory: string[] = [];
+  private apiKey: string = GIPHY_API_KEY;
+  private serviceUrl: string = 'https://api.giphy.com/v1/gifs'
 
-
-  constructor() { }
+  constructor( private http: HttpClient ) { }
 
 
   get tagsHistory() {
@@ -17,6 +22,7 @@ export class GifsService {
 
   private organizedHistory(tag: string) {
 
+    /* Si el string que llega está vacio, que la función no haga nada */
     if (tag.length === 0) return;
 
     tag = tag.toLowerCase();
@@ -30,13 +36,26 @@ export class GifsService {
 
   }
 
-  searchTag(tag: string): void {
-
-    /* Si el string que llega está vacio, que la función no haga nada */
+  searchTag(tag: string):void {
 
     this.organizedHistory(tag);
 
-    console.log(this.tagsHistory)
+    const params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('limit', '10')
+      .set('q', tag)
+
+    this.http.get(`${ this.serviceUrl }/search`, { params })
+      .subscribe(resp => {
+        console.log(resp)
+      })
+
+
+    /*
+      * Opción alternativa al paquete http de Angular de como se haría con un simple fetch de JS
+        fetch('https://api.giphy.com/v1/gifs/search?api_key=Er2HU62YEsEMKoepR3GAxvsaKq3Emmlz&q=valorant&limit=10')
+        .then(resp => resp.json())
+        .then(data => console.log(data)) */
 
   }
 
