@@ -89,5 +89,11 @@ export class GifsService {
 
   }
 
+  resetTags() {
+    this._tagsHistory = [];
+    this.gifsList = [];
+    this.saveLocalStorage();
+  }
+
 
 }
