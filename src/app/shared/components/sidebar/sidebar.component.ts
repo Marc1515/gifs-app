@@ -18,6 +18,10 @@ export class SidebarComponent {
     this.gifsService.searchTag(tag)
   }
 
+  resetTag() {
+    this.gifsService.resetTags();
+  }
+
 
 
 }
