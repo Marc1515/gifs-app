@@ -13,4 +13,12 @@
 
   </div>
 
+  <div *ngIf="tags.length" class="d-flex justify-content-end mt-2">
+    <button
+      (click)="resetTag()"
+      class="rounded">
+      Reset
+    </button>
+  </div>
+
 </div>
