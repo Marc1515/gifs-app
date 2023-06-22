@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { GifsService } from '../../../gifs/services/gifs.service';
+import { SharedSidebarService } from './shared-sidebar.service';
 
 @Component({
   selector: 'shared-sidebar',
@@ -8,7 +9,16 @@ import { GifsService } from '../../../gifs/services/gifs.service';
 })
 export class SidebarComponent {
 
-  constructor(private gifsService:GifsService) {}
+  public isSidebarVisible: boolean = true;
+  public isOpen: boolean = false;
+
+  constructor(private gifsService:GifsService, private sharedSidebarService: SharedSidebarService) {
+
+    this.sharedSidebarService.sidebarToggled.subscribe((isOpen: boolean) => {
+      this.isSidebarVisible = !isOpen;
+    });
+
+  }
 
   get tags() {
     return this.gifsService.tagsHistory;
@@ -16,12 +26,19 @@ export class SidebarComponent {
 
   searchTag(tag: string) {
     this.gifsService.searchTag(tag)
+    if (!this.isSidebarVisible) {
+      this.isSidebarVisible = true;
+      this.sharedSidebarService.tagClicked.emit(tag);  // Ocultar la barra lateral
+    }
   }
 
   resetTag() {
     this.gifsService.resetTags();
   }
 
+  toggleMenu() {
+    this.isOpen = !this.isOpen;
+  }
 
 
 }
