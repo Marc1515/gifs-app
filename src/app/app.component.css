@@ -1,8 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
 
 .sidebar {
   width: 100%;
@@ -13,8 +8,13 @@ body {
   z-index: 5;
 }
 
+.homeContent {
+  width: 100%;
+}
+
 
 @media (min-width: 768px) {
+
   .sidebar {
     width: 25%;
     z-index: 0;

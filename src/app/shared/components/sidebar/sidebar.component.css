@@ -1,4 +1,10 @@
-#sidebar {
+.sidebar {
   height: 100%;
+}
+
+@media (max-width: 768px) {
+  .list-group {
+    padding-top: 5rem;
+  }
 
 }
