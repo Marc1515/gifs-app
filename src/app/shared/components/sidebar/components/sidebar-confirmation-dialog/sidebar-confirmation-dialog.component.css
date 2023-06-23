@@ -1,0 +1,13 @@
+.dialog-container {
+  padding: 1rem;
+}
+
+.dialog-answers {
+  padding-top: .5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.dialog-answers :nth-child(1) {
+  margin-right: .5rem;
+}
