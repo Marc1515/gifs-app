@@ -49,6 +49,8 @@ export class SidebarComponent {
 
   resetTag() {
     this.gifsService.resetTags();
+    this.sharedSidebarService.tagClicked.emit();
+    this.sharedSidebarService.sidebarToggled.emit();
   }
 
   toggleMenu() {
