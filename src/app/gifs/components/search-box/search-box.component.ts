@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { GifsService } from '../../services/gifs.service';
+import { SharedSidebarService } from 'src/app/shared/components/sidebar/shared-sidebar.service';
 
 @Component({
   selector: 'app-search-box',
@@ -12,7 +13,7 @@ export class SearchBoxComponent {
   tagInput!: ElementRef<HTMLInputElement>
 
 
-  constructor( private gifsService: GifsService ) {}
+  constructor( private gifsService: GifsService, private sharedSidebarService: SharedSidebarService ) {}
 
 
   searchTag() {
@@ -22,6 +23,10 @@ export class SearchBoxComponent {
     this.gifsService.searchTag(newTag);
 
     this.tagInput.nativeElement.value = '';
+
+    this.sharedSidebarService.tagClicked.emit();
+
+    this.sharedSidebarService.sidebarToggled.emit();
 
   }
 
