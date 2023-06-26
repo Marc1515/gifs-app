@@ -1,4 +1,9 @@
 <div class="d-flex justify-content-end">
   <gif-burguer-button class="burguerButton"></gif-burguer-button>
 </div>
-<input type="text" class="form-control mt-5" placeholder="Buscar gifs..." (keyup.enter)="searchTag()" #txtTagInput />
+<!-- <input type="text" class="form-control mt-5" placeholder="Buscar gifs..." (keyup.enter)="searchTag()" #txtTagInput /> -->
+
+<mat-form-field class="example-full-width mt-5">
+  <mat-label>Buscar gifs...</mat-label>
+  <input type="text" matInput (keyup.enter)="searchTag()" #txtTagInput />
+</mat-form-field>

@@ -7,6 +7,12 @@
   z-index: 5;
 }
 
+.example-full-width {
+  position: relative;
+  width: 100%;
+  z-index: 5;
+}
+
 @media (max-width: 768px) {
   .form-control {
     margin-top: 2rem;
