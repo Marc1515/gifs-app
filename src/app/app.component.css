@@ -1,4 +1,3 @@
-
 .sidebar {
   width: 100%;
   position: fixed;
@@ -10,6 +9,7 @@
 
 .homeContent {
   width: 100%;
+  background-color: #DAFFFB;
 }
 
 
