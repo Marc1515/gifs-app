@@ -13,6 +13,12 @@
   z-index: 5;
 }
 
+h3 {
+  font-size: x-large;
+  font-weight: 500;
+  color: #001C30;
+}
+
 @media (max-width: 768px) {
   .form-control {
     margin-top: 2rem;
