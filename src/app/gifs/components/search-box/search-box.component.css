@@ -19,6 +19,23 @@ h3 {
   color: #001C30;
 }
 
+.search-button {
+  margin-top: 3rem;
+  height: 3.5rem;
+  z-index: 5;
+}
+.mat-mdc-unelevated-button.mat-primary {
+  background-color: #176B87;
+}
+
+.mdc-floating-label, .mat-mdc-floating-label, .ng-tns-c3673195382-0, .ng-star-inserted {
+  color: #176B87;
+}
+
+.search-button :nth-child(1){
+  font-size: x-large;
+}
+
 @media (max-width: 768px) {
   .form-control {
     margin-top: 2rem;

@@ -30,5 +30,9 @@ export class SearchBoxComponent {
 
   }
 
+  searchOnButton() {
+    this.searchTag();
+  }
+
 
 }
