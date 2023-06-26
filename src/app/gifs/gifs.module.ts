@@ -10,6 +10,9 @@ import { SharedModule } from '../shared/shared.module';
 
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -24,7 +27,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     CommonModule,
     SharedModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatIconModule,
+    MatDividerModule,
+    MatButtonModule
   ],
   exports: [
     HomePageComponent
