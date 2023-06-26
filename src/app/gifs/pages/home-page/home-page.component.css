@@ -1,0 +1,9 @@
+h1, li, p {
+  color: slategray;
+}
+
+li {
+  font-size: large;
+  margin-bottom: 0.3rem;
+}
+

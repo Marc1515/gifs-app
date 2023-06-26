@@ -4,9 +4,27 @@
     <app-search-box></app-search-box>
   </div>
 
-  <div class="col-12">
+  <div *ngIf="gifs.length" class="col-12">
     <!-- Listado de Gifs -->
     <app-card-list [gifs]="gifs" ></app-card-list>
+  </div>
+
+  <div *ngIf="gifs.length === 0" class="col-12 mt-5">
+    <!-- Listado de Gifs -->
+    <h1 class="my-5">¡Busca gifs sobre cualquier concepto!</h1>
+
+    <div class="container m-3">
+      <ul>
+        <li>Alegria</li>
+        <li>Ibai LLanos</li>
+        <li>Ferrari</li>
+        <li>Games of Thrones</li>
+        <li>The Simpsons</li>
+      </ul>
+    </div>
+
+    <p class="mt-5">Las 10 últimas búsquedas se van a quedar guardadas en el historial, puedes borrarlas en cualquier momento con el icono de la papelera.</p>
+
   </div>
 
 
