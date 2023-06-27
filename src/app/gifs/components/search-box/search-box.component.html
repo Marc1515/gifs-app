@@ -6,10 +6,10 @@
 <div class="d-flex">
   <mat-form-field class="example-full-width">
     <mat-label>Buscar gifs...</mat-label>
-    <input type="text" matInput (keyup.enter)="searchTag()" #txtTagInput />
+    <input type="text" matInput (keyup.enter)="submitValue(txtTagInput.value)" #txtTagInput />
   </mat-form-field>
 
-    <button class="search-button" mat-flat-button color="primary" (click)="searchOnButton()"><i class="fa fa-search"></i>
+    <button class="search-button" mat-flat-button color="primary" (click)="submitValue(txtTagInput.value)"><i class="fa fa-search"></i>
     </button>
 
 </div>

@@ -16,6 +16,14 @@ export class SearchBoxComponent {
   constructor( private gifsService: GifsService, private sharedSidebarService: SharedSidebarService ) {}
 
 
+    submitValue(value: string) {
+    if (value && value.trim() !== '') {
+      this.searchTag()
+    } else {
+      // Si está vacio que no haga nada
+    }
+  }
+
   searchTag() {
 
     const newTag = this.tagInput.nativeElement.value;
