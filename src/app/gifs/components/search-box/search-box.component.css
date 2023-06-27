@@ -36,8 +36,28 @@ h3 {
   font-size: x-large;
 }
 
-@media (max-width: 768px) {
-  .form-control {
-    margin-top: 2rem;
+.form-control {
+  margin-top: 2rem;
+}
+
+.example-full-width {
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+
+  h3, .burguerButton {
+
+    display: none;
+
   }
+
+  .example-full-width {
+    margin-top: 1rem;
+  }
+
+  .search-button {
+    margin-top: 1rem;
+  }
+
 }
