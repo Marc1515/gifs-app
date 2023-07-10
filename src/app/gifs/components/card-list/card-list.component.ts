@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { Gif } from '../../interfaces/gifs.interface';
 
 @Component({
@@ -8,7 +8,22 @@ import { Gif } from '../../interfaces/gifs.interface';
 })
 export class CardListComponent {
 
+  public showButton: boolean = false
+
   @Input()
   public gifs: Gif[] = [];
+
+  @HostListener('window:scroll', [])
+
+  onWindowScroll() {
+    this.showButton = window.pageYOffset > 100;
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 
 }

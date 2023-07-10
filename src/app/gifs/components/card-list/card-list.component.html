@@ -6,4 +6,11 @@
     class="col-md-6 col-sm-12"
   ></gifs-card>
 
+  <div class="row">
+    <div class="col">
+      <button *ngIf="showButton" class="scrollButton" (click)="scrollToTop()">
+        <i class="fa-solid fa-angles-up"></i>
+      </button>
+    </div>
+  </div>
 </div>
